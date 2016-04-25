@@ -9,7 +9,6 @@ var User = require(libs + 'model/user')
 
 router.get('/', function(req, res) {
     User.find()
-        .populate('projects')
         .exec(function(err, members) {
             if(!err) {
                 return res.json(members)
@@ -23,7 +22,6 @@ router.get('/', function(req, res) {
 
 router.get('/:id', function(req, res) {
     User.findById(req.params.id)
-        .populate('projects')
         .exec(function(err, user) {
             if(!user) {
                 res.statusCode = 404

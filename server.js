@@ -1,4 +1,4 @@
-var debug = require('debug')('cronosapi')
+var debug = require('debug')('node-express-base')
 
 var libs = process.cwd() + '/libs/'
 var config = require(libs + 'config')
